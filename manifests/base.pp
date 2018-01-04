@@ -1,6 +1,6 @@
 class profile::base(
   $ntp_servers = [
-    'hutta.0',
+    'paka.0',
     'hutta.1',
   ],
   $config_file_owner = 'root',
