@@ -29,14 +29,13 @@ class profile::nginx(
         #'Debian' => "${config_dir}/sites-enabled",
         #default  => $config_confd,
         #},
-  Array $vhosts,
+        #Array $vhosts,
 ) {
   include ::nginx
 
-  $vhosts.each |$vhost| {
-    ::nginx::vhost { $vhost['fqdn']:
-      port           => $vhost['port'],
-      server_aliases =>$vhost['server_aliases'],
+  #$vhosts.each |$vhost| {
+    ::nginx::vhost { $facts['fqdn']:
+      #port           => $vhost['port'],
+      #server_aliases =>$vhost['server_aliases'],
     }
-  }
 }
